@@ -43,6 +43,16 @@ fi
  ${CP} regional_utils.fd/exec/orog.x                   ../exec/regional_orog.x
 
 #------------------------------------
+# install sfc_climo_gen
+#------------------------------------
+ ${CP} regional_utils.fd/exec/sfc_climo_gen            ../exec/regional_sfc_climo_gen.x
+
+#------------------------------------
+# install regional_grid
+#------------------------------------
+ ${CP} regional_utils.fd/exec/regional_grid            ../exec/regional_grid.x
+
+#------------------------------------
 # install fre-nctools
 #------------------------------------
  ${CP} regional_utils.fd/exec/make_hgrid               ../exec/regional_make_hgrid.x
