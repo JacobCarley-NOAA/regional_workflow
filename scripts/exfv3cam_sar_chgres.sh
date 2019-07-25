@@ -72,6 +72,12 @@ export FNVMNC=${FIXsar}/${CASE}.vegetation_greenness.tileX.nc
 # of chgres to execute simultaneously.
 #
 
+# Following ensures loggin output from chgres is appended to the OUTPUT.pid files
+#  Important for error checking when successive runs of chgres are involved.
+export REDOUT='1>>'
+export REDERR='2>>'
+
+
 if [ $REGIONAL -eq 1 ]; then	# REGIONAL -eq 1 is for ICs and regional hour 0
 
 #--------------------------------------------------

@@ -33,6 +33,7 @@ mkdir -p $OUTDIR
 
 export pid=$$
 export pgmout="OUTPUT.${pid}"
+export pgmerr=errfile
 
 #####################################
 # Define COM directories
@@ -113,10 +114,8 @@ if [ $tmmark = tm12 ] ; then
 
     export bchour=$hour_name
     ${HOMEfv3}/scripts/exfv3cam_sar_chgres.sh
-
-    mv $OUTDIR/gfs_bndy.tile7.${bchour}.nc $INPdir/.
-
     err=$?
+    mv $OUTDIR/gfs_bndy.tile7.${bchour}.nc $INPdir/.
     if [ $err -ne 0 ] ; then
       echo "bndy file not created, abort"
       exit 10
@@ -125,7 +124,7 @@ if [ $tmmark = tm12 ] ; then
   done
 fi
 
-cat err
+cat $pgmerr
 cat $pgmout
 
 exit $err

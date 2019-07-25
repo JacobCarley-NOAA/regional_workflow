@@ -36,7 +36,7 @@ mkdir -p $OUTDIR
 
 export pid=$$
 export pgmout="OUTPUT.${pid}"
-
+export pgmerr=errfile
 #####################################
 # Define COM directories
 #####################################
@@ -153,8 +153,8 @@ fi
 
 date
 
-if [ -e err ]; then
-  cat err
+if [ -e $pgmerr ]; then
+  cat $pgmerr
   cat $pgmout
 fi
 

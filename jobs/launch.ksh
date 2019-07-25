@@ -9,7 +9,7 @@ COMMAND=$1
 
 if [ "$machine" = "DELL" ] ; then
   . /usrx/local/prod/lmod/lmod/init/sh
-  MODULEFILES=${MODULEFILES:-/gpfs/dell2/emc/modeling/noscrub/${USER}/regional_workflow/modulefiles}
+  MODULEFILES=${MODULEFILES:-/gpfs/dell2/emc/modeling/noscrub/${USER}/sprint/fork/regional_workflow/modulefiles}
   module use ${MODULEFILES}/wcoss_dell_p3
   module load fv3
   module load prod_util/1.1.0

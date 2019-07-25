@@ -243,7 +243,8 @@
 ####
 ################################################################################
 #  Set environment.
-VERBOSE=${VERBOSE:-"NO"}
+set -e
+VERBOSE=${VERBOSE:-"YES"}
 if [[ "$VERBOSE" = "YES" ]] ; then
    echo $(date) EXECUTING $0 $* >&2
    set -x

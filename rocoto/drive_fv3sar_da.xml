@@ -3,27 +3,27 @@
 [
 
 <!ENTITY STARTYEAR "2019">
-<!ENTITY STARTMONTH "04">
-<!ENTITY STARTDAY "01">
-<!ENTITY STARTHOUR "12">
+<!ENTITY STARTMONTH "07">
+<!ENTITY STARTDAY "16">
+<!ENTITY STARTHOUR "00">
 
 <!ENTITY ENDYEAR "2019">
 <!ENTITY ENDMONTH "12">
 <!ENTITY ENDDAY "31">
 <!ENTITY ENDHOUR "00">
 
-<!ENTITY USER "Benjamin.Blake">
+<!ENTITY USER "Jacob.Carley">
 <!ENTITY machine "DELL">
 <!ENTITY ACCOUNT "NAM-T2O">
 
-<!ENTITY HOMEfv3 "/gpfs/dell2/emc/modeling/noscrub/&USER;/regional_workflow">
+<!ENTITY HOMEfv3 "/gpfs/dell2/emc/modeling/noscrub/&USER;/sprint/fork/regional_workflow">
 <!ENTITY JOBS "&HOMEfv3;/jobs">
 <!ENTITY SCRIPTS "&HOMEfv3;/scripts">
 <!ENTITY COMgfs "/gpfs/dell1/nco/ops/com/gfs/prod">
 <!ENTITY OUTDIR "/gpfs/dell1/ptmp/&USER;">
 <!ENTITY DATAROOT "/gpfs/dell1/stmp/&USER;/tmpnwprd">
 
-<!ENTITY RESERVATION '<queue>dev</queue><account>&ACCOUNT;</account>'>
+<!ENTITY RESERVATION '<queue>debug</queue><account>&ACCOUNT;</account>'>
 <!ENTITY RESERVATION_ANL '<queue>debug</queue><account>&ACCOUNT;</account>'>
 <!ENTITY RESERVATION_TRANSFER '<queue>dev_transfer</queue><account>&ACCOUNT;</account>'>
 
@@ -45,9 +45,9 @@
 <!--  ******************* STARTING THE WORKFLOW ******************* -->
 
 <!-- <workflow realtime="F" scheduler="lsf" taskthrottle="11"> -->
-<workflow realtime="T" scheduler="lsf" taskthrottle="60" cyclethrottle="2" cyclelifespan="00:18:00:00">
+<workflow realtime="T" scheduler="lsf" taskthrottle="60" cyclethrottle="1" cyclelifespan="10:00:00:00">
 
-  <cycledef group="regional">&STARTYEAR;&STARTMONTH;&STARTDAY;&STARTHOUR;00 &ENDYEAR;&ENDMONTH;&ENDDAY;&ENDHOUR;00 12:00:00</cycledef>
+  <cycledef group="regional">&STARTYEAR;&STARTMONTH;&STARTDAY;&STARTHOUR;00 &ENDYEAR;&ENDMONTH;&ENDDAY;&ENDHOUR;00 24:00:00</cycledef>
 
   <log>
     <cyclestr>&OUTDIR;/testlogs_hourly_rocoto/workflow_regional_@Y@m@d@H.log</cyclestr>
